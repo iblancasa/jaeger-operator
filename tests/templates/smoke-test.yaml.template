@@ -24,7 +24,6 @@ spec:
             - name: JAEGER_QUERY
               value: "http://{{ .Env.JAEGER_NAME }}-query{{if getenv "KUBERNETES_NAMESPACE"}}.{{ .Env.KUBERNETES_NAMESPACE }}{{end}}:16686/api/traces"
       restartPolicy: OnFailure
-  backoffLimit: 10
 ---
 apiVersion: batch/v1
 kind: Job
@@ -41,6 +40,5 @@ spec:
             - name: SERVICE_NAME
               value: "{{ .Env.JAEGER_SERVICE }}"
             - name: QUERY_HOST
-              value: "{{ .Env.JAEGER_NAME }}-query{{if getenv "KUBERNETES_NAMESPACE"}}.{{ .Env.KUBERNETES_NAMESPACE }}{{end}}:16686"
+              value: "http://{{ .Env.JAEGER_NAME }}-query{{if getenv "KUBERNETES_NAMESPACE"}}.{{ .Env.KUBERNETES_NAMESPACE }}{{end}}:16686"
       restartPolicy: OnFailure
-  backoffLimit: 10
