@@ -32,7 +32,7 @@ require (
 	gomodules.xyz/jsonpatch/v2 v2.2.0
 	google.golang.org/grpc v1.47.0
 	k8s.io/api v0.24.2
-	k8s.io/apimachinery v0.24.2
+	k8s.io/apimachinery v0.24.3
 	k8s.io/client-go v12.0.0+incompatible
 	sigs.k8s.io/controller-runtime v0.12.3
 )
