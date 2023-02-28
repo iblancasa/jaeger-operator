@@ -439,7 +439,7 @@ function render_smoke_test_example() {
 #   render_install_kafka_operator <test_step>
 #
 # Example:
-#   render_install_kafka_opreator "01"
+#   render_install_kafka_operator "01"
 # Generates the `01-install.yaml` and `01-assert.yaml` files to install the Kafka
 # operator and ensure it is deployed properly.
 # Note: the Kafka Operator will not be installed if KAFKA_OLM is `true`.
@@ -888,6 +888,7 @@ export SUITE_DIR=$(dirname "$0")
 # Check the dependencies are there
 $ROOT_DIR/hack/install/install-gomplate.sh
 $ROOT_DIR/hack/install/install-yq.sh
+$ROOT_DIR/hack/install/install-kustomize.sh
 
 
 # Elasticsearch settings
